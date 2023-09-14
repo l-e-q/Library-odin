@@ -8,6 +8,40 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    <header id="header">
+        <div class="wrapper">
+            <div id="header-content">
+                <div id="library-header-text">
+                    Library
+                </div>
+                <div id="log-in">
+                    <button id="log-in-button">Log in</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="wrapper">
+            <div id="add-book-button-container">
+                <button id="add-book-button">+ Add book</button>
+            </div>
+            <div id="books-container">
+                <!-- books here -->
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            l-e-q
+        </p>
+        <a href="https://github.com/l-e-q" target="_blank">
+            <img src="./github-mark.png" id="github-logo"></img>
+        </a>
+    </footer>
     <div id="book-form-container" class="displayed-no">
         <form id="book-form">
             <div class="input-container">
@@ -25,12 +59,11 @@
             <div class="input-container">
                 <label for="book-read-input" class="book-input-label">Have you read it?</label>
                 <input type="checkbox" name="book-read" id="book-read-input" value="read">
-                <input type="hidden" name="book-read" id="book-not-read-input" value="notRead" >
+                <input type="hidden" name="book-read" id="book-not-read-input" value="notRead">
             </div>
             <button type="button" id="book-form-sumbit-btn">Sumbit</button>
         </form>
     </div>
-    <button id="add-book-btn">Add book</button>
     <script src="./script.js"></script>
 </body>
 </html>

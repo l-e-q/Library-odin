@@ -1,15 +1,22 @@
 html {
     box-sizing: border-box;
+    font-family: 'Inter';
+    color: #292524;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
-}
-
-body {
-    font-family: 'Inter';
+    font-family: inherit;
+    color: inherit;
 }
 
 .displayed-no {
@@ -28,9 +35,146 @@ body {
     padding: 50px 60px;
 }
 
-#book-not-read-input{
-}
-
 .input-container {
     margin-bottom: 10px;
+}
+
+.card-book-title,
+.card-book-author,
+.card-book-pages,
+.card-read-button,
+.card-remove-button {
+    display: block;
+}
+
+.wrapper {
+    padding: 0 15vw;
+}
+
+#header {
+    background-color: #fafaf9;
+    padding: 25px;
+    box-shadow: 0px 1px 21px -3px rgba(41, 37, 36, 0.20);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#library-header-text {
+    font-size: 52px;
+    font-weight: 900;
+    color: #0c0a09;
+    margin-right: 20px;
+}
+
+#log-in-button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color: #e7e5e4;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#main {
+    background-color: #f5f5f4;
+    flex: auto;
+}
+
+#add-book-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+#add-book-button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color: #e7e5e4;
+    font-size: 32px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#books-container {
+    display: grid;
+    gap: 4vh;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: 1fr;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color: #fafaf9;
+    box-shadow: 0px 0px 10px 0px rgba(41, 37, 36, 0.15);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-book-title {
+    font-size: 28px;
+}
+
+.card-book-author {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.card-book-pages {
+    font-size: 18px;
+    margin-bottom: 2vh;
+}
+
+.card-read-button {
+    border: none;
+    padding: 12px 50px;
+    border-radius: 20px;
+    background-color: #d8a0a0;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-remove-button {
+    border: none;
+    padding: 12px 38px;
+    border-radius: 20px;
+    background-color: #e7e5e4;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.read {
+    background-color: #a0d8a3;
+}
+
+.footer {
+    background-color: #f5f5f4;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#github-logo {
+    margin-left: 5px;
+    height: 30px;
 }
