@@ -67,16 +67,38 @@ showFormButton.addEventListener('click', () => {
 });
 
 addBookButton.addEventListener('click', () => {
-    const name = document.querySelector('#book-name-input').value;
-    document.querySelector('#book-name-input').value = '';
+    let name;
+    if (document.querySelector('#book-name-input').value.match('^[A-Za-z\d]{1,120}$')) {
+        name = document.querySelector('#book-name-input').value;
+        
+    } else {
+        // Show error on form
+        return;
+    }
 
-    const author = document.querySelector('#book-author-input').value;
-    document.querySelector('#book-author-input').value = '';
-
-    const pages = document.querySelector('#book-pages-input').value;
-    document.querySelector('#book-pages-input').value = '';
+    let author;
+    if (document.querySelector('#book-author-input').value.match('^[A-Za-z\d]{1,60}$')) {
+        author = document.querySelector('#book-author-input').value;
+        
+    } else {
+        // Show error on form
+        return;
+    }
+    
+    let pages;
+    if (document.querySelector('#book-pages-input').value.match('^[0-9]{1,10}$')) {
+        pages = document.querySelector('#book-pages-input').value;
+    } else {
+        // Show error on form
+        return;
+    }
 
     const isRead = document.querySelector('#book-read-input').checked;
+    
+    // form clean
+    document.querySelector('#book-name-input').value = '';
+    document.querySelector('#book-author-input').value = '';
+    document.querySelector('#book-pages-input').value = '';
     document.querySelector('#book-read-input').checked = false;
 
     myLibrary.push(new Book(name, author, pages, isRead));
