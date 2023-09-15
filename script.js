@@ -68,9 +68,17 @@ showFormButton.addEventListener('click', () => {
 
 addBookButton.addEventListener('click', () => {
     const name = document.querySelector('#book-name-input').value;
+    document.querySelector('#book-name-input').value = '';
+
     const author = document.querySelector('#book-author-input').value;
+    document.querySelector('#book-author-input').value = '';
+
     const pages = document.querySelector('#book-pages-input').value;
+    document.querySelector('#book-pages-input').value = '';
+
     const isRead = document.querySelector('#book-read-input').checked;
+    document.querySelector('#book-read-input').checked = false;
+
     myLibrary.push(new Book(name, author, pages, isRead));
     bookForm.classList.toggle('displayed-no');
     displayBooks();
