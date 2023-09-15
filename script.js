@@ -68,28 +68,32 @@ showFormButton.addEventListener('click', () => {
 
 addBookButton.addEventListener('click', () => {
     let name;
-    if (document.querySelector('#book-name-input').value.match('^[A-Za-z\d]{1,120}$')) {
+    if (document.querySelector('#book-name-input').value.match('^.{1,200}$')) {
+        document.querySelector('#book-name-input').classList.remove('input-error')
         name = document.querySelector('#book-name-input').value;
-        
     } else {
         // Show error on form
+        document.querySelector('#book-name-input').classList.add('input-error');
         return;
     }
 
     let author;
-    if (document.querySelector('#book-author-input').value.match('^[A-Za-z\d]{1,60}$')) {
+    if (document.querySelector('#book-author-input').value.match('^.{1,120}$')) {
+        document.querySelector('#book-author-input').classList.remove('input-error')
         author = document.querySelector('#book-author-input').value;
-        
     } else {
         // Show error on form
+        document.querySelector('#book-author-input').classList.add('input-error');
         return;
     }
     
     let pages;
-    if (document.querySelector('#book-pages-input').value.match('^[0-9]{1,10}$')) {
+    if (document.querySelector('#book-pages-input').value.match('^[0-9]{1,10}$') && Number(document.querySelector('#book-pages-input').value) > 0) {
+        document.querySelector('#book-pages-input').classList.remove('input-error');
         pages = document.querySelector('#book-pages-input').value;
     } else {
         // Show error on form
+        document.querySelector('#book-pages-input').classList.add('input-error');
         return;
     }
 

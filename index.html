@@ -38,25 +38,17 @@
             </script>
             l-e-q
         </p>
-        <a href="https://github.com/l-e-q" target="_blank">
+        <a href="https://github.com/l-e-q" target="_blank" id="github-logo-container">
             <img src="./github-mark.png" id="github-logo"></img>
         </a>
     </footer>
     <div id="book-form-container" class="displayed-no">
         <form id="book-form">
-            <div class="input-container">
-                <label for="book-name-input" class="book-input-label">Name</label>
-                <input type="text" name="book-name" id="book-name-input" placeholder="Gone with the Wind">
-            </div>
-            <div class="input-container">
-                <label for="book-author-input" class="book-input-label">Author</label>
-                <input type="text" name="book-author" id="book-author-input" placeholder="Margaret Mitchell">
-            </div>
-            <div class="input-container">
-                <label for="book-pages-input" class="book-input-label">Pages</label>
-                <input type="number" name="book-pages" id="book-pages-input" placeholder="1037">
-            </div>
-            <div class="input-container">
+            <div id="form-text">Add new book</div>
+            <input type="text" name="book-name" id="book-name-input" class="input" placeholder="Title">
+            <input type="text" name="book-author" id="book-author-input" class="input" placeholder="Author">
+            <input type="number" name="book-pages" id="book-pages-input" class="input" placeholder="Pages" min="1">
+            <div id="checkbox-container">
                 <label for="book-read-input" class="book-input-label">Have you read it?</label>
                 <input type="checkbox" name="book-read" id="book-read-input" value="read">
             </div>
