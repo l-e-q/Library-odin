@@ -7,10 +7,11 @@ function Book(name, author, pages, isRead) {
     this.isRead = isRead;
     this.removeFromLibrary = function() {
         myLibrary.splice(myLibrary.indexOf(this), 1);
-        console.log(myLibrary);
+        displayBooks();
     };
     this.isReadToggle = function () {
         isRead = !isRead;
+        displayBooks();
     }
 }
 
@@ -19,18 +20,45 @@ const bookForm = document.querySelector('#book-form-container');
 const addBookButton = document.querySelector('#book-form-sumbit-btn');
 const bookContainer = document.querySelector('#books-container');
 
-function displayBooks() {
+function displayBooks() { 
     bookContainer.innerHTML = '';
     myLibrary.forEach((book) => {
-        bookContainer.innerHTML += `
-            <div class="card">
-                <div class="card-book-title">${book.name}</div>
-                <div class="card-book-author">${book.author}</div>
-                <div class="card-book-pages">${book.pages}</div>
-                <button class="card-read-button ${book.isRead ? 'read' : ''}">Read</button>
-                <button class="card-remove-button">Remove</button>
-            </div>
-        `;
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const cardBookTitle = document.createElement('div');
+        cardBookTitle.classList.add('card-book-title');
+        cardBookTitle.innerText = book.name;
+
+        const cardBookAuthor = document.createElement('div');
+        cardBookAuthor.classList.add('card-book-author');
+        cardBookAuthor.innerText = book.author;
+
+        const cardBookPages = document.createElement('div');
+        cardBookPages.classList.add('card-book-pages');
+        cardBookPages.innerText = book.pages;
+
+        const readButton = document.createElement("button");
+        readButton.classList.add('card-read-button');
+        book.isRead ? readButton.classList.add('read') : null;
+        readButton.innerText = book.isRead ? 'Read' : 'Not read';
+        readButton.addEventListener('click', () => {
+            book.isReadToggle();
+        })
+
+        const removeButton = document.createElement("button");
+        removeButton.classList.add('card-remove-button');
+        removeButton.innerText = 'Remove';
+        removeButton.addEventListener('click', () => {
+            book.removeFromLibrary();
+        })
+
+        card.appendChild(cardBookTitle);
+        card.appendChild(cardBookAuthor);
+        card.appendChild(cardBookPages);
+        card.appendChild(readButton);
+        card.appendChild(removeButton);
+        bookContainer.appendChild(card);
     })
 }
 
