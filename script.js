@@ -10,7 +10,7 @@ function Book(name, author, pages, isRead) {
         displayBooks();
     };
     this.isReadToggle = function () {
-        isRead = !isRead;
+        this.isRead = !this.isRead;
         displayBooks();
     }
 }
