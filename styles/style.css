@@ -113,6 +113,7 @@ body {
     gap: 4vh;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: 1fr;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -192,4 +193,5 @@ body {
 #log-in-button:hover,
 #log-in-button:focus {
     opacity: 0.7;
+    box-shadow: 0px 0px 12px 1px rgba(34, 60, 80, 0.2);
 }
