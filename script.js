@@ -40,7 +40,7 @@ function displayBooks() {
 
         const cardBookPages = document.createElement('div');
         cardBookPages.classList.add('card-book-pages');
-        cardBookPages.innerText = book.pages;
+        cardBookPages.innerText = `${book.pages} pages`;
 
         const readButton = document.createElement("button");
         readButton.classList.add('card-read-button');
