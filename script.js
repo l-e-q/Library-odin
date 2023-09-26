@@ -115,7 +115,7 @@ showFormButton.addEventListener('click', () => {
 });
 
 window.addEventListener('click', (e) => {
-    if ((e.target != document.querySelector('#book-form') && e.target != document.querySelector('#form-text') && e.target != bookForm && e.target != document.querySelector('#book-name-input') && e.target != document.querySelector('#book-author-input') && e.target != document.querySelector('#book-pages-input') && e.target != document.querySelector('#label') && e.target != document.querySelector('#book-read-input') && document.querySelector('#book-form-sumbit-btn')) && !bookForm.classList.contains('displayed-no') && e.target != showFormButton) {
+    if ((e.target != document.querySelector('#book-form') && e.target != document.querySelector('#form-text') && e.target != bookForm && e.target != document.querySelector('#book-name-input') && e.target != document.querySelector('#book-author-input') && e.target != document.querySelector('#book-pages-input') && e.target != document.querySelector('#label') && e.target != document.querySelector('#book-read-input') && e.target != document.querySelector('#book-form-sumbit-btn')) && !bookForm.classList.contains('displayed-no') && e.target != showFormButton) {
         bookForm.classList.add('displayed-no');
     }
 })
