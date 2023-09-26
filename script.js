@@ -1,18 +1,22 @@
 const myLibrary = [];
 
-function Book(name, author, pages, isRead) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-    this.removeFromLibrary = function() {
+class Book {
+    constructor(name, author, pages, isRead) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+
+    removeFromLibrary() {
         myLibrary.splice(myLibrary.indexOf(this), 1);
         displayBooks();
     };
-    this.isReadToggle = function () {
+
+    isReadToggle() {
         this.isRead = !this.isRead;
         displayBooks();
-    }
+};
 }
 
 const showFormButton = document.querySelector('#add-book-button');
